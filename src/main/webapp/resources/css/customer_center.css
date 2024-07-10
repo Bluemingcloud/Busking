@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'NanumSquareNeoBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf) format("truetype");
+}
+
+* {padding: 0; margin: 0;
+font-family: NanumSquareNeoBold;}
+ul, li, ol, dl, dd {list-style: none;}
+img {max-width: 100%; height: auto;}
+
+body{
+    width: 1280px;
+    margin: 0 auto;
+
+}
+
+header {
+    
+    border: 1px solid black;
+}
+
+/* ---------- */
+section{
+    margin-top: 100px;
+    position: relative;
+}
+
+section .service_menu {
+    /* border: 1px solid red; */
+    width: 200px;
+    height: 500px;
+
+    scale: 1.2;
+    transform-origin: top left;
+}
+
+.service_board{
+    border: 1px solid black;
+    position: absolute;
+    right: 200px;
+    top: -50px;
+
+    scale: 1.1;
+    transform-origin: top left;
+    
+}
+
+
+
+
+
+
+
+
+
+
+#foot{
+    border: 1px solid black;
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 50px;
+}
+footer{
+    height: 50px;
+    position: relative;
+    transform: translateY(-100%);
+    
+}
+
+
+
+
