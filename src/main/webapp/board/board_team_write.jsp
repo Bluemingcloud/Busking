@@ -29,19 +29,19 @@
                 <input class="title_box" type="text" name="title" required style="height: 40px;">
                 <br>
                 <div class="title_team_box">
-                    <select class="title_box" type="text" name="title" required style="height: 40px; width: 110px; float: left;">
+                    <select class="title_box" type="text" name="teamCount" required style="height: 40px; width: 110px; float: left;">
                         <option id="board_team_option" value="">모집 인원</option>
-                        <option value="1인">1</option>
-                        <option value="2인">2</option>
-                        <option value="3인">3</option>
-                        <option value="4인">4</option>
-                        <option value="5인">5</option>
-                        <option value="기타">기타</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">기타</option>
                     </select>
-                        <select class="title_box" type="text" name="title" required style="height: 40px; width: 110px;">
+                        <select class="title_box" type="text" name="teamResult" required style="height: 40px; width: 110px;">
                             <option id="board_team_option" value="">모집 상태</option>
-                            <option value="1인">모집 중</option>
-                            <option value="2인">모집 완료</option>
+                            <option value="T">모집 중</option>
+                            <option value="F">모집 완료</option>
                         </select>
                 </div>
             </div>
