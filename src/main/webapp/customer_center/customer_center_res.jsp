@@ -33,28 +33,28 @@
 				<div class="board_list_box">
 
 					<table class="board_list_table" id="layout1">
-					    <thead>
-					        <tr>
-					            <th class="nth2">신청자</th>
-					            <th class="nth3">예약 날짜</th>
-					            <th class="nth4">예약 시간</th>
-					            <th class="nth5">장소</th>
-					            <th class="nth6">신청 날짜</th>
-					        </tr>
-					    </thead>
-					    <tbody>
-					        <c:forEach var="dto" items="${resList}">
-					            <tr>
-					                <td>${dto.userId}</td>
-					                <td><a href="getResContent.customer?resNum=${dto.resNum}" style="width:30%;">
-					                    <fmt:formatDate value="${dto.resDate}" pattern="yyyy-MM-dd" />
-					                </a></td>
-					                <td>${dto.resTime}</td>
-					                <td>${dto.locaName}</td>
-					                <td><fmt:formatDate value="${dto.resRegdate}" pattern="yy.MM.dd"/></td>
-					            </tr>
-					        </c:forEach>
-					    </tbody>
+		                <thead>
+		                    <tr>
+		                        <th class="nth2">신청자</th>
+		                        <th class="nth3">예약 날짜</th>
+		                        <th class="nth4">예약 시간</th>
+		                        <th class="nth5">장소</th>
+		                        <th class="nth6">신청 날짜</th>
+		                    </tr>
+		                </thead>
+                        <tbody>
+							<c:forEach var="dto" items="${resList}">
+							    <tr>
+							        <td>${dto.userId}</td>
+							        <td><a href="getResContent.customer?resNum=${dto.resNum }" style="width:30%;">
+							        	<fmt:formatDate value="${dto.resDate}" pattern="yyyy-MM-dd" />
+							        </a></td>
+							        <td>${dto.resTime }</td>
+							        <td>${dto.locaName}</td>
+							        <td><fmt:formatDate value="${dto.resRegdate}" pattern="yy.MM.dd"/></td>
+							    </tr>
+							</c:forEach>
+						</tbody>
 					</table>
 				</div>
 				<!-- 페이지 번호 -->
