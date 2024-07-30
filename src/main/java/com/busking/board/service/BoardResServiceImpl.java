@@ -30,10 +30,32 @@ public class BoardResServiceImpl implements BoardResService {
 	@Override
 	public void getList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+//	    // 페이지 번호 받아오기
+//		String page = request.getParameter("page");
+//		if(page == null) page = "1";
+//		int pageNum = Integer.parseInt(page);
+//
+//	    // SQL 세션 열기
+//	    SqlSession sql = sqlSessionFactory.openSession(true);
+//	    BoardResMapper resMapper = sql.getMapper(BoardResMapper.class);
+//
+//	    // 화면에 리스트 내보내기
+//	    ArrayList<BoardResDTO> resList = new ArrayList<>();
+//	    int total = resMapper.getTotal(); // 페이징 용 전체 글 개수 가져오기
+//	    PageVO pageVO = new PageVO(pageNum, total); // 페이징용 PageVO 객체 생성
+//	    
+//	    resList = resMapper.getList(pageVO);
+//	    sql.close();
+//
+//	    // response
+//	    request.setAttribute("pageVO", pageVO); // PageVO 객체 넘기기
+//	    request.setAttribute("resList", resList);
+//	    request.getRequestDispatcher("customer_center_res.jsp").forward(request, response);
+	    
 	    // 페이지 번호 받아오기
-		String page = request.getParameter("page");
-		if(page == null) page = "1";
-		int pageNum = Integer.parseInt(page);
+	    String page = request.getParameter("page");
+	    if(page == null) page = "1";
+	    int pageNum = Integer.parseInt(page);
 
 	    // SQL 세션 열기
 	    SqlSession sql = sqlSessionFactory.openSession(true);
@@ -43,7 +65,7 @@ public class BoardResServiceImpl implements BoardResService {
 	    ArrayList<BoardResDTO> resList = new ArrayList<>();
 	    int total = resMapper.getTotal(); // 페이징 용 전체 글 개수 가져오기
 	    PageVO pageVO = new PageVO(pageNum, total); // 페이징용 PageVO 객체 생성
-	    
+
 	    resList = resMapper.getList(pageVO);
 	    sql.close();
 
@@ -51,6 +73,7 @@ public class BoardResServiceImpl implements BoardResService {
 	    request.setAttribute("pageVO", pageVO); // PageVO 객체 넘기기
 	    request.setAttribute("resList", resList);
 	    request.getRequestDispatcher("customer_center_res.jsp").forward(request, response);
+	    
 
 	}
 
