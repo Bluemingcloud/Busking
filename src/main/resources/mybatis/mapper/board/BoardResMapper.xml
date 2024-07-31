@@ -20,17 +20,17 @@
 		-->
 		 
 		SELECT * 
-        FROM ( 
-        	SELECT R.RES_NUM, R.USER_ID, R.RES_DATE, R.RES_TIME, R.RES_REGDATE, L.LOCA_NAME, ROWNUM AS RN 
-	        FROM RESERVATIONS R 
-			JOIN LOCATIONS L 
-			ON R.LOCA_ID = L.LOCA_ID 
-			WHERE RES_RESULT = 'T' 
-			ORDER BY RES_DATE DESC 
-	    ) 
-        WHERE RN > (#{pageNum} - 1) * #{amount} 
-        AND #{pageNum} * #{amount} >= RN 
-        ORDER BY RES_DATE DESC
+    	FROM (
+        SELECT R.RES_NUM, R.USER_ID, R.RES_DATE, R.RES_TIME, R.RES_REGDATE, L.LOCA_NAME, 
+               ROW_NUMBER() OVER (ORDER BY R.RES_DATE DESC, L.LOCA_NAME ASC) AS RN
+        FROM RESERVATIONS R
+        JOIN LOCATIONS L
+        ON R.LOCA_ID = L.LOCA_ID
+        WHERE RES_RESULT = 'T'
+	    )
+	    WHERE RN > (#{pageNum} - 1) * #{amount}
+	    AND #{pageNum} * #{amount} >= RN
+	    ORDER BY RN
 		
 	</select>
 
